@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Access</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px;
+            margin: 20px 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <!-- Ganti URL dengan logo Anda jika ada -->
+            <img src="https://via.placeholder.com/100" alt="Logo">
+        </div>
+        <h1>Akses Course</h1>
+        <p>Silakan masukkan password untuk melanjutkan</p>
+        
+        <div>
+            <input type="password" id="password" placeholder="Masukkan password course" />
+            <button onclick="checkAccess()">Akses Course</button>
+            <p id="message"></p>
+        </div>
+    </div>
+
+    <script>
+        // Data password dan URL course
+        const courses = {
+            "hduuw7yvL": "https://www.notion.so/Students-Access-Page-8a3451d2b6f74d9a81414e6d33616a36#digital-marketing",
+            "POSJ5hdwk": "https://www.notion.so/Students-Access-Page-8a3451d2b6f74d9a81414e6d33616a36#content-creator"
+        };
+
+        function checkAccess() {
+            const password = document.getElementById("password").value;
+            
+            // Periksa apakah password benar
+            if (courses[password]) {
+                // Jika benar, arahkan ke URL course
+                window.location.href = courses[password];
+            } else {
+                // Jika salah, tampilkan pesan error
+                document.getElementById("message").innerText = "Password salah. Silakan coba lagi.";
+            }
+        }
+    </script>
+</body>
+</html>
